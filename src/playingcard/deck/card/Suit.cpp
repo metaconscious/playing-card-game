@@ -4,28 +4,26 @@
 
 #include "Suit.h"
 
-using game::playing_card::deck::card::Suit;
-
-Suit::Suit(Nameable::value_type name, Symbolizable::value_type symbol)
-        : Nameable{ std::move(name) }, Symbolizable{ std::move(symbol) }
-{
-
-}
-
-Suit::Suit(Nameable::view_type nameView, Symbolizable::view_type symbolView)
-        : Nameable{ nameView }, Symbolizable{ symbolView }
-{
-
-}
-
-Suit::Suit(const char* nameRaw, const char* symbolRaw)
-        : Suit{ Nameable::view_type{ nameRaw }, Symbolizable::view_type{ symbolRaw }}
-{
-
-}
-
 namespace game::playing_card::deck::card
 {
+    Suit::Suit(Nameable::value_type name, Symbolizable::value_type symbol)
+            : Nameable{ std::move(name) }, Symbolizable{ std::move(symbol) }
+    {
+
+    }
+
+    Suit::Suit(Nameable::view_type nameView, Symbolizable::view_type symbolView)
+            : Nameable{ nameView }, Symbolizable{ symbolView }
+    {
+
+    }
+
+    Suit::Suit(const char* nameRaw, const char* symbolRaw)
+            : Suit{ Nameable::view_type{ nameRaw }, Symbolizable::view_type{ symbolRaw }}
+    {
+
+    }
+
     std::ostream& operator<<(std::ostream& os, const Suit& suit)
     {
         os << suit.getName();
@@ -34,57 +32,57 @@ namespace game::playing_card::deck::card
 
     namespace suit
     {
-        const Symbolizable::value_type& FrenchSuit::Symbol::clubs()
+        Symbolizable::view_type French::Symbols::clubs()
         {
             static const Symbolizable::value_type s_clubs{ "♣" };
             return s_clubs;
         }
 
-        const Symbolizable::value_type& FrenchSuit::Symbol::diamonds()
+        Symbolizable::view_type French::Symbols::diamonds()
         {
             static const Symbolizable::value_type s_diamonds{ "♦" };
             return s_diamonds;
         }
 
-        const Symbolizable::value_type& FrenchSuit::Symbol::hearts()
+        Symbolizable::view_type French::Symbols::hearts()
         {
             static const Symbolizable::value_type s_hearts{ "♥" };
             return s_hearts;
         }
 
-        const Symbolizable::value_type& FrenchSuit::Symbol::spades()
+        Symbolizable::view_type French::Symbols::spades()
         {
             static const Symbolizable::value_type s_spades{ "♠" };
             return s_spades;
         }
 
-        const FrenchSuit::value_type& FrenchSuit::clubs()
+        const French::value_type& French::Suits::clubs()
         {
-            static const value_type s_clubs{ Suit::create("Clubs", Symbol::clubs()) };
+            static const value_type s_clubs{ Suit::create("Clubs", Symbols::clubs()) };
             return s_clubs;
         }
 
-        const FrenchSuit::value_type& FrenchSuit::diamonds()
+        const French::value_type& French::Suits::diamonds()
         {
-            static const value_type s_diamonds{ Suit::create("Diamonds", Symbol::diamonds()) };
+            static const value_type s_diamonds{ Suit::create("Diamonds", Symbols::diamonds()) };
             return s_diamonds;
         }
 
-        const FrenchSuit::value_type& FrenchSuit::hearts()
+        const French::value_type& French::Suits::hearts()
         {
-            static const value_type s_hearts{ Suit::create("Hearts", Symbol::hearts()) };
+            static const value_type s_hearts{ Suit::create("Hearts", Symbols::hearts()) };
             return s_hearts;
         }
 
-        const FrenchSuit::value_type& FrenchSuit::spades()
+        const French::value_type& French::Suits::spades()
         {
-            static const value_type s_spades{ Suit::create("Spades", Symbol::spades()) };
+            static const value_type s_spades{ Suit::create("Spades", Symbols::spades()) };
             return s_spades;
         }
 
-        const FrenchSuit::value_type& FrenchSuit::suitAt(FrenchSuit::size_type index)
+        const French::value_type& French::suitAt(French::size_type index)
         {
-            static const container_type s_suits{ clubs(), diamonds(), hearts(), spades() };
+            static const container_type s_suits{ Suits::clubs(), Suits::diamonds(), Suits::hearts(), Suits::spades() };
             return s_suits.at(index);
         }
     }

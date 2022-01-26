@@ -19,8 +19,8 @@ namespace game::helper::impl
     class BasicSymbolizable : public ISymbolizable<CharT, Traits>
     {
     public:
-        using value_type = std::basic_string<CharT, Traits, Allocator>;
-        using view_type = std::basic_string_view<CharT, Traits>;
+        using value_type = typename ISymbolizable<CharT, Traits, Allocator>::value_type ;
+        using view_type = typename ISymbolizable<CharT, Traits, Allocator>::view_type ;
 
     private:
         value_type m_symbol{};

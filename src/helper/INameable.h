@@ -11,13 +11,18 @@
 
 namespace game::helper
 {
-    template<typename CharT, typename Traits = std::char_traits<CharT>>
-    class INameable
+    template<typename CharT, typename Traits = std::char_traits<CharT>, typename Allocator = std::allocator<CharT>>
+    class IBasicNameable
     {
     public:
-        [[nodiscard]] virtual std::basic_string_view<CharT, Traits> getName() const = 0;
-        virtual ~INameable() = default;
+        using value_type = std::basic_string<CharT, Traits, Allocator>;
+        using view_type = std::basic_string_view<CharT, Traits>;
+
+        [[nodiscard]] virtual view_type getName() const = 0;
+        virtual ~IBasicNameable() = default;
     };
+
+    using INameable = IBasicNameable<char>;
 }
 
 

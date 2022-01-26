@@ -16,7 +16,7 @@ namespace game::helper::impl
     class Enumerable : public EnableSharedFromThis<Target>, public IEnumerable<Target>
     {
     public:
-        using value_type = std::size_t;
+        using value_type = typename IEnumerable<Target>::value_type;
 
     private:
         static inline value_type s_size{ 0 };

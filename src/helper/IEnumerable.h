@@ -13,9 +13,11 @@ namespace game::helper
     class IEnumerable
     {
     public:
-        [[nodiscard]] virtual std::size_t getValue() const = 0;
-        virtual ~IEnumerable() = default;
+        using target_type = Target;
+        using value_type = std::size_t;
 
+        [[nodiscard]] virtual value_type getValue() const = 0;
+        virtual ~IEnumerable() = default;
     };
 }
 

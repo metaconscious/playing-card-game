@@ -10,7 +10,7 @@
 #include "helper/Enumerable.h"
 #include "helper/Nameable.h"
 #include "helper/Symbolizable.h"
-#include <iostream>
+#include <ostream>
 #include <memory>
 #include <vector>
 
@@ -32,14 +32,14 @@ namespace game::playing_card::deck::card
         Suit(Nameable::view_type nameView, Symbolizable::view_type symbolView);
 
     public:
-        friend class EnableSharedFromThis;
+        friend class EnableSharedFromThis<Suit>;
 
         friend std::ostream& operator<<(std::ostream& os, const Suit& suit);
     };
 
     namespace suit
     {
-        class FrenchSuit
+        class French
         {
         public:
             using element_type = const Suit;
@@ -47,25 +47,30 @@ namespace game::playing_card::deck::card
             using container_type = std::vector<value_type>;
             using size_type = container_type::size_type;
 
-            class Symbol
+            class Symbols
             {
             public:
-                static const Symbolizable::value_type& clubs();
+                static Symbolizable::view_type clubs();
 
-                static const Symbolizable::value_type& diamonds();
+                static Symbolizable::view_type diamonds();
 
-                static const Symbolizable::value_type& hearts();
+                static Symbolizable::view_type hearts();
 
-                static const Symbolizable::value_type& spades();
+                static Symbolizable::view_type spades();
             };
 
-            static const value_type & clubs();
+            class Suits
+            {
+            public:
+                static const value_type& clubs();
 
-            static const value_type& diamonds();
+                static const value_type& diamonds();
 
-            static const value_type& hearts();
+                static const value_type& hearts();
 
-            static const value_type& spades();
+                static const value_type& spades();
+
+            };
 
             static const value_type& suitAt(size_type index);
 
