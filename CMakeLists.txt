@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(playing_card_game VERSION 0.14.1 LANGUAGES CXX)
+project(playing_card_game VERSION 0.25.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -20,6 +20,4 @@ add_executable(playing_card_game
         src/playingcard/deck/card/Suit.h
         src/playingcard/deck/Card.cpp
         src/playingcard/deck/Card.h
-        src/playingcard/Deck.cpp
-        src/playingcard/Deck.h
-        src/main.cpp src/helper/INameable.h src/helper/Nameable.h src/helper/Symbolizable.h src/helper/ISymbolizable.h src/helper/EnableSharedFromThis.h src/helper/IAbbreviable.h src/helper/Abbreviable.h)
+        src/main.cpp src/helper/INameable.h src/helper/Nameable.h src/helper/Symbolizable.h src/helper/ISymbolizable.h src/helper/EnableSharedFromThis.h src/helper/IAbbreviable.h src/helper/Abbreviable.h src/playingcard/Deck.h src/helper/VectorWrapper.h src/playingcard/Deck.cpp)

@@ -45,6 +45,10 @@ namespace game::playing_card::deck::card
             using container_type = std::vector<value_type>;
             using size_type = container_type::size_type;
 
+        private:
+            static const container_type& ranks();
+
+        public:
             class Symbols
             {
             public:
@@ -104,6 +108,8 @@ namespace game::playing_card::deck::card
 
                 static const value_type& king();
             };
+
+            static size_type size();
 
             static const value_type& rankAt(size_type index);
         };

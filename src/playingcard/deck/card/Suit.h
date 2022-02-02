@@ -72,8 +72,13 @@ namespace game::playing_card::deck::card
 
             };
 
+        private:
+            static const container_type& suits();
+
+        public:
             static const value_type& suitAt(size_type index);
 
+            static size_type size();
         };
     }
 }

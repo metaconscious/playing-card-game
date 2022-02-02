@@ -69,6 +69,12 @@ namespace game::playing_card::deck
             using container_type = std::vector<value_type>;
             using size_type = container_type::size_type;
 
+        private:
+            static const container_type& cards();
+
+        public:
+            static size_type size();
+
             class Symbols
             {
             public:

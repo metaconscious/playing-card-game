@@ -80,10 +80,20 @@ namespace game::playing_card::deck::card
             return s_spades;
         }
 
-        const French::value_type& French::suitAt(French::size_type index)
+        const French::container_type& French::suits()
         {
             static const container_type s_suits{ Suits::clubs(), Suits::diamonds(), Suits::hearts(), Suits::spades() };
-            return s_suits.at(index);
+            return s_suits;
+        }
+
+        const French::value_type& French::suitAt(French::size_type index)
+        {
+            return suits().at(index);
+        }
+
+        French::size_type French::size()
+        {
+            return suits().size();
         }
     }
 }

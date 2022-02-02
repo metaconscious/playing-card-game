@@ -771,7 +771,7 @@ namespace game::playing_card::deck
             return s_kingOfSpades;
         }
 
-        const Standard52Card::value_type& Standard52Card::cardAt(Standard52Card::size_type index)
+        const Standard52Card::container_type& Standard52Card::cards()
         {
             static const container_type s_cards
                     {
@@ -828,7 +828,17 @@ namespace game::playing_card::deck
                             Cards::queenOfSpades(),
                             Cards::kingOfSpades()
                     };
-            return s_cards.at(index);
+            return s_cards;
+        }
+
+        Standard52Card::size_type Standard52Card::size()
+        {
+            return cards().size();
+        }
+
+        const Standard52Card::value_type& Standard52Card::cardAt(Standard52Card::size_type index)
+        {
+            return cards().at(index);
         }
 
         Symbolizable::view_type Misc::Symbols::cardBack()

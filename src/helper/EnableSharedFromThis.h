@@ -7,6 +7,7 @@
 
 
 #include <memory>
+#include <type_traits>
 #include <utility>
 
 namespace game::helper
@@ -16,17 +17,17 @@ namespace game::helper
     {
     public:
         template<typename ...Args>
-        static std::shared_ptr<Tp> create(Args ...args)
+        [[nodiscard]] static std::shared_ptr<Tp> create(Args&& ...args)
         {
             return std::shared_ptr<Tp>{ new Tp{ std::forward<Args>(args)... } };
         }
 
-        std::shared_ptr<Tp> copy()
+        [[nodiscard]] std::shared_ptr<Tp> copy()
         {
             return this->shared_from_this();
         }
 
-        std::shared_ptr<const Tp> copy() const
+        [[nodiscard]] std::shared_ptr<const Tp> copy() const
         {
             return this->shared_from_this();
         }

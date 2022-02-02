@@ -188,7 +188,7 @@ namespace game::playing_card::deck::card
             return s_king;
         }
 
-        const French::value_type& French::rankAt(French::size_type index)
+        const French::container_type& French::ranks()
         {
             static const container_type s_ranks
                     {
@@ -196,7 +196,17 @@ namespace game::playing_card::deck::card
                             Ranks::five(), Ranks::six(), Ranks::seven(), Ranks::eight(),
                             Ranks::nine(), Ranks::ten(), Ranks::jack(), Ranks::queen(), Ranks::king()
                     };
-            return s_ranks.at(index);
+            return s_ranks;
+        }
+
+        French::size_type French::size()
+        {
+            return ranks().size();
+        }
+
+        const French::value_type& French::rankAt(French::size_type index)
+        {
+            return ranks().at(index);
         }
 
         Symbolizable::view_type Tarot::Symbols::knight()
