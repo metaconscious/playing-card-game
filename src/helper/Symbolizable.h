@@ -11,7 +11,7 @@
 #include <string>
 #include <utility>
 
-namespace game::helper::impl
+namespace pcg::helper::impl
 {
     template<typename CharT,
             typename Traits = std::char_traits<CharT>,

@@ -7,7 +7,7 @@
 
 #include <cstddef>
 
-namespace game::helper
+namespace pcg::helper
 {
     template<typename Target>
     class IEnumerable

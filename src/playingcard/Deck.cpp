@@ -4,7 +4,7 @@
 
 #include "Deck.h"
 
-namespace game::playing_card::deck
+namespace pcg::playing_card::deck
 {
 
     std::shared_ptr<Deck> Standard52CardDeck::create()

@@ -12,9 +12,9 @@
 #include <memory>
 #include <ostream>
 
-using game::helper::impl::VectorWrapper;
+using pcg::helper::impl::VectorWrapper;
 
-namespace game::playing_card
+namespace pcg::playing_card
 {
     template<typename Element, typename Value = std::shared_ptr<Element>>
     class BasicDeck : public EnableSharedFromThis<BasicDeck<Element>>, public VectorWrapper<Value>

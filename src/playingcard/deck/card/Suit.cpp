@@ -4,7 +4,7 @@
 
 #include "Suit.h"
 
-namespace game::playing_card::deck::card
+namespace pcg::playing_card::deck::card
 {
     Suit::Suit(Nameable::value_type name, Symbolizable::value_type symbol)
             : Nameable{ std::move(name) }, Symbolizable{ std::move(symbol) }

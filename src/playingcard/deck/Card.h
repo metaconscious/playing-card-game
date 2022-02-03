@@ -17,13 +17,13 @@
 #include <ostream>
 #include <vector>
 
-using game::helper::impl::Abbreviable;
-using game::helper::EnableSharedFromThis;
-using game::helper::impl::Enumerable;
-using game::helper::impl::Nameable;
-using game::helper::impl::Symbolizable;
+using pcg::helper::impl::Abbreviable;
+using pcg::helper::EnableSharedFromThis;
+using pcg::helper::impl::Enumerable;
+using pcg::helper::impl::Nameable;
+using pcg::helper::impl::Symbolizable;
 
-namespace game::playing_card::deck
+namespace pcg::playing_card::deck
 {
     class Card : public Abbreviable, public Enumerable<Card>, public Nameable, public Symbolizable
     {

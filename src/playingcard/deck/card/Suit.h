@@ -15,12 +15,12 @@
 #include <vector>
 
 
-using game::helper::EnableSharedFromThis;
-using game::helper::impl::Enumerable;
-using game::helper::impl::Nameable;
-using game::helper::impl::Symbolizable;
+using pcg::helper::EnableSharedFromThis;
+using pcg::helper::impl::Enumerable;
+using pcg::helper::impl::Nameable;
+using pcg::helper::impl::Symbolizable;
 
-namespace game::playing_card::deck::card
+namespace pcg::playing_card::deck::card
 {
     class Suit : public Enumerable<Suit>, public Nameable, public Symbolizable
     {

@@ -11,7 +11,7 @@
 #include <compare>
 #include <cstddef>
 
-namespace game::helper::impl
+namespace pcg::helper::impl
 {
     template <typename Target>
     class Enumerable : public EnableSharedFromThis<Target>, public IEnumerable<Target>

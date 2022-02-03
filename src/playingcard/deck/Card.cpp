@@ -6,7 +6,7 @@
 
 #include <utility>
 
-namespace game::playing_card::deck
+namespace pcg::playing_card::deck
 {
     Card::Card(const rank_ptr& rankPtr, const suit_ptr& suitPtr, Symbolizable::value_type symbol)
             : Abbreviable{

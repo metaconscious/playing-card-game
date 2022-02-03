@@ -9,7 +9,7 @@
 #include <string>
 #include <string_view>
 
-namespace game::helper
+namespace pcg::helper
 {
     template<typename CharT, typename Traits = std::char_traits<CharT>, typename Allocator = std::allocator<CharT>>
     class IBasicNameable

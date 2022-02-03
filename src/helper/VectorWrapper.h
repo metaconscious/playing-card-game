@@ -8,14 +8,18 @@
 
 #include "playingcard/deck/Card.h"
 #include <algorithm>
+#include <concepts>
+#include <functional>
+#include <random>
 #include <vector>
 #include <ostream>
 
-using game::playing_card::deck::Card;
+using pcg::playing_card::deck::Card;
 
-namespace game::helper::impl
+namespace pcg::helper::impl
 {
     template<typename Value>
+    requires std::totally_ordered<Value>
     class VectorWrapper
     {
     public:
@@ -240,6 +244,56 @@ namespace game::helper::impl
         constexpr const container_type& get() const
         {
             return m_vector;
+        }
+
+        template<typename Compare>
+        void sort(Compare compare)
+        {
+            std::ranges::sort(m_vector, compare);
+        }
+
+        void sort()
+        {
+            sort(std::greater<Value>());
+        }
+
+        void descending_sort()
+        {
+            sort(std::less<Value>());
+        }
+
+        template<typename UniformRandomBitGenerator>
+        requires std::uniform_random_bit_generator<UniformRandomBitGenerator>
+        void shuffle(UniformRandomBitGenerator gen)
+        {
+            std::ranges::shuffle(m_vector, gen);
+        }
+
+        void shuffle()
+        {
+            static std::random_device r{};
+            static std::seed_seq seed{ r(), r(), r(), r(), r(), r() };
+            static std::mt19937 mersenneTwister{ seed };
+            shuffle(mersenneTwister);
+        }
+
+        template<typename Compare>
+        constexpr bool find(const Value& value, Compare compare) const
+        {
+            return std::ranges::binary_search(m_vector, value, compare);
+        }
+
+        constexpr bool find(const Value& value) const
+        {
+            return std::ranges::binary_search(m_vector, value);
+        }
+
+        constexpr void forEach(std::function<void(const Value&)> execute) const
+        {
+            for (const auto& value: m_vector)
+            {
+                execute(value);
+            }
         }
 
         // non-member functions

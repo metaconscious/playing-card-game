@@ -10,7 +10,7 @@
 #include <type_traits>
 #include <utility>
 
-namespace game::helper
+namespace pcg::helper
 {
     template<typename Tp>
     class EnableSharedFromThis : public std::enable_shared_from_this<Tp>

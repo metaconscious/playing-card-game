@@ -4,7 +4,7 @@
 
 #include "Rank.h"
 
-namespace game::playing_card::deck::card
+namespace pcg::playing_card::deck::card
 {
     Rank::Rank(Nameable::value_type name, Symbolizable::value_type symbol)
             : Nameable{ std::move(name) }, Symbolizable{ std::move(symbol) }
@@ -24,7 +24,7 @@ namespace game::playing_card::deck::card
 
     }
 
-    std::ostream& operator<<(std::ostream& os, const game::playing_card::deck::card::Rank& rank)
+    std::ostream& operator<<(std::ostream& os, const pcg::playing_card::deck::card::Rank& rank)
     {
         os << rank.getName();
         return os;
