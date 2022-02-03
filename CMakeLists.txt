@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 project(playing_card_game VERSION 0.37.15 LANGUAGES CXX)
+add_subdirectory(tests)
 
 set(CMAKE_CXX_STANDARD 20)
 
