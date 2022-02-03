@@ -8,6 +8,7 @@
 
 #include "EnableSharedFromThis.h"
 #include "IEnumerable.h"
+#include <compare>
 #include <cstddef>
 
 namespace game::helper::impl
@@ -37,6 +38,7 @@ namespace game::helper::impl
         {
             return m_value;
         }
+
     };
 }
 

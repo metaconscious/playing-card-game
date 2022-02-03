@@ -34,6 +34,12 @@ namespace game::playing_card
     public:
         friend class EnableSharedFromThis<BasicDeck<Element>>;
 
+        friend std::ostream& operator<<(std::ostream& os, const BasicDeck& deck)
+        {
+            os << static_cast<const VectorWrapper<Value>&>(deck);
+            return os;
+        }
+
     };
 
     using Deck = BasicDeck<const deck::Card>;

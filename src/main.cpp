@@ -29,6 +29,8 @@ int main()
 
     std::cout << *FrenchSuit::suitAt(3) << '\n';
 
+    std::cout << std::boolalpha << (FrenchSuit::suitAt(0) < FrenchSuit::suitAt(1)) << '\n';
+
     //std::shared_ptr<const Rank> rank{ Rank::create("name", "symbol") };
     //std::cout << *rank << ' ' << rank->getValue() << '\n';
 
@@ -36,6 +38,8 @@ int main()
     std::cout << *r0 << ": " << r0->getSymbol() << ' ' << s0->getValue() << '\n';
 
     std::cout << *FrenchRank::rankAt(12) << '\n';
+
+    //std::cout << std::boolalpha << (FrenchSuit::suitAt(1) < FrenchRank::rankAt(2)) << '\n';
 
     Standard52Card::value_type c0{ Standard52Card::Cards::kingOfClubs() };
     std::cout << *c0 << ": " << c0->getSymbol() << ' ' << c0->getValue() << ' ' << c0->getAbbreviation() << '\n';
@@ -48,7 +52,7 @@ int main()
     std::cout << *deck << '\n';
 
     auto s52c{ Standard52CardDeck::create() };
-    std::cout << *static_cast<std::shared_ptr<VectorWrapper<std::shared_ptr<const Card>>>>(s52c) << '\n';
+    std::cout << *s52c << '\n';
 
     return 0;
 }
