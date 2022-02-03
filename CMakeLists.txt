@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(playing_card_game VERSION 0.29.0 LANGUAGES CXX)
+project(playing_card_game VERSION 0.37.15 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
