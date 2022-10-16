@@ -6,10 +6,10 @@
 #define PLAYING_CARD_GAME_RANK_H
 
 
-#include "helper/EnableSharedFromThis.h"
-#include "helper/Enumerable.h"
-#include "helper/Nameable.h"
-#include "helper/Symbolizable.h"
+#include "EnableSharedFromThis.h"
+#include "Enumerable.h"
+#include "Nameable.h"
+#include "Symbolizable.h"
 #include <ostream>
 #include <vector>
 

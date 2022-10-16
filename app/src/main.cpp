@@ -1,10 +1,10 @@
 //
 // Created by user on 1/25/22.
 //
-#include "playingcard/deck/card/Suit.h"
-#include "playingcard/deck/card/Rank.h"
-#include "playingcard/deck/Card.h"
-#include "playingcard/Deck.h"
+#include "Suit.h"
+#include "Rank.h"
+#include "Card.h"
+#include "Deck.h"
 #include <iostream>
 
 using pcg::playing_card::deck::card::Suit;

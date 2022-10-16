@@ -6,7 +6,7 @@
 #define PLAYING_CARD_GAME_VECTOR_WRAPPER_H
 
 
-#include "playingcard/deck/Card.h"
+#include "Card.h"
 #include <algorithm>
 #include <concepts>
 #include <functional>

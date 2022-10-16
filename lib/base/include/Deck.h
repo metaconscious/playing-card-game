@@ -6,8 +6,8 @@
 #define PLAYING_CARD_GAME_DECK_H
 
 
-#include "helper/VectorWrapper.h"
-#include "deck/Card.h"
+#include "VectorWrapper.h"
+#include "Card.h"
 #include <functional>
 #include <memory>
 #include <ostream>

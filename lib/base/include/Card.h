@@ -6,13 +6,13 @@
 #define PLAYING_CARD_GAME_CARD_H
 
 
-#include "helper/Abbreviable.h"
-#include "helper/EnableSharedFromThis.h"
-#include "helper/Enumerable.h"
-#include "helper/Nameable.h"
-#include "helper/Symbolizable.h"
-#include "card/Rank.h"
-#include "card/Suit.h"
+#include "Abbreviable.h"
+#include "EnableSharedFromThis.h"
+#include "Enumerable.h"
+#include "Nameable.h"
+#include "Symbolizable.h"
+#include "Rank.h"
+#include "Suit.h"
 #include <memory>
 #include <ostream>
 #include <vector>

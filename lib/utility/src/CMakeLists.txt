@@ -1,0 +1,1 @@
+add_library(${UTIL_TARGET_NAME} INTERFACE)
